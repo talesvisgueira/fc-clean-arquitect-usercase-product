@@ -1,4 +1,4 @@
-import ListProductUserCase from "./list.product.usercase";
+import ListProductUseCase from "./list.product.usecase";
 
 
 const product1 = { id: '1', name: 'Product 1', price: 10};
@@ -18,7 +18,7 @@ describe("Unit test for listing product use case", () => {
 
     it("should list a product", async () => {
       const repository = ProductMockRepository();
-      const useCase = new ListProductUserCase(repository);
+      const useCase = new ListProductUseCase(repository);
       const output = await useCase.execute({});
   
       expect(output.products.length).toBe(2);
